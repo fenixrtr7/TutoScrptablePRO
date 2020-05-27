@@ -1,15 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class MouseManager : MonoBehaviour
 {
-    public LayerMask clickableLayer; // layermask used to isolate raycasts against clickable layers
+    public LayerMask clickableLayer;
 
-    public Texture2D pointer; // normal mouse pointer
-    public Texture2D target; // target mouse pointer
-    public Texture2D doorway; // doorway mouse pointer
+    public Texture2D pointer;
+    public Texture2D target;
+    public Texture2D doorway;
 
-    public EventVector3 OnClickEnviroment;
+    public EventVector3 OnClickEnvironment;
 
     void Update()
     {
@@ -28,16 +30,17 @@ public class MouseManager : MonoBehaviour
                 Cursor.SetCursor(target, new Vector2(16, 16), CursorMode.Auto);
             }
 
-            if (Input.GetMouseButton(0))
+            // If environment surface is clicked, invoke callbacks.
+            if (Input.GetMouseButtonDown(0))
             {
                 if (door)
                 {
                     Transform doorway = hit.collider.gameObject.transform;
-                    OnClickEnviroment.Invoke(doorway.position + doorway.forward * 10);
+                    OnClickEnvironment.Invoke(doorway.position + doorway.forward * 10);
                 }
                 else
                 {
-                    OnClickEnviroment.Invoke(hit.point);
+                    OnClickEnvironment.Invoke(hit.point);
                 }
             }
         }
@@ -49,5 +52,4 @@ public class MouseManager : MonoBehaviour
 }
 
 [System.Serializable]
-public class EventVector3 : UnityEvent<Vector3>{ }
- 
+public class EventVector3 : UnityEvent<Vector3> { }

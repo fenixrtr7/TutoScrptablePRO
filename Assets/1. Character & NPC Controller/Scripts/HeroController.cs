@@ -3,8 +3,8 @@ using UnityEngine.AI;
 
 public class HeroController : MonoBehaviour
 {
-    Animator animator; // reference to the animator component
-    NavMeshAgent agent; // reference to the NavMeshAgent
+    Animator animator;
+    NavMeshAgent agent;
 
     void Awake()
     {
@@ -12,9 +12,13 @@ public class HeroController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-    private void Update() {
+    void Update()
+    {
         animator.SetFloat("Speed", agent.velocity.magnitude);
     }
 
-
+    public void SetDestination(Vector3 destination)
+    {
+        agent.destination = destination;
+    }
 }
