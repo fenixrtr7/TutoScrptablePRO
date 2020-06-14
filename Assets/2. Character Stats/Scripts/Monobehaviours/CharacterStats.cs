@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
+    public CharacterStats_SO characterDefinition_Template;
     public CharacterStats_SO characterDefinition;
     public CharacterInventory charInv;
     public GameObject characterWeaponSlot;
@@ -17,40 +18,18 @@ public class CharacterStats : MonoBehaviour
     #endregion
 
     #region Initializations
+    private void Awake()
+    {
+        if (characterDefinition_Template != null)
+            characterDefinition = Instantiate(characterDefinition_Template);  
+    }
+
     void Start()
     {
-        if (!characterDefinition.setManually)
+        if (characterDefinition.isHero)
         {
-            characterDefinition.maxHealth = 100;
-            characterDefinition.currentHealth = 50;
-
-            characterDefinition.maxMana = 25;
-            characterDefinition.currentMana = 10;
-
-            characterDefinition.maxWealth = 500;
-            characterDefinition.currentWealth = 0;
-
-            characterDefinition.baseDamage = 2;
-            characterDefinition.currentDamage = characterDefinition.baseDamage;
-
-            characterDefinition.baseResistance = 0;
-            characterDefinition.currentResistance = 0;
-
-            characterDefinition.maxEncumbrance = 50f;
-            characterDefinition.currentEncumbrance = 0f;
-
-            characterDefinition.charExperience = 0;
-            characterDefinition.charLevel = 1;
+            characterDefinition.SetCharacterLevel(0);
         }
-    }
-    #endregion
-
-    #region SaveData
-    private void Update()
-    {
-        //This should be triggered by the game manager during a save point
-        if (Input.GetMouseButtonDown(2))
-            characterDefinition.saveCharacterData();
     }
     #endregion
 
@@ -69,6 +48,12 @@ public class CharacterStats : MonoBehaviour
     {
         characterDefinition.GiveWealth(wealthAmount);
     }
+
+    public void IncreaseXP(int xp)
+    {
+        characterDefinition.GiveXP(xp);
+    }
+
     #endregion
 
     #region Stat Reducers
@@ -107,9 +92,50 @@ public class CharacterStats : MonoBehaviour
         return characterDefinition.currentHealth;
     }
 
-    public ItemPickUp GetCurrentWeapon()
+    public Weapon GetCurrentWeapon()
     {
-        return characterDefinition.weapon;
+        if (characterDefinition.weapon != null)
+        {
+            return characterDefinition.weapon.itemDefinition.weaponSlotObject;
+        }
+        else
+        {
+            return null;
+        }
     }
+
+    public int GetDamage()
+    {
+        return characterDefinition.currentDamage;
+    }
+
+    public float GetResistance()
+    {
+        return characterDefinition.currentResistance;
+    }
+
+    #endregion
+
+    #region Stat Initializers
+
+    public void SetInitialHealth(int health)
+    {
+        characterDefinition.maxHealth = health;
+        characterDefinition.currentHealth = health;
+    }
+
+    public void SetInitialResistance(int resistance)
+    {
+        characterDefinition.baseResistance = resistance;
+        characterDefinition.currentResistance = resistance;
+    }
+
+    public void SetInitialDamage(int damage)
+    {
+        characterDefinition.baseDamage = damage;
+        characterDefinition.currentDamage = damage;
+    }
+
+
     #endregion
 }

@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: 4029617d7fed5b74d812aadc3e9b5afc
-timeCreated: 1495468375
-licenseType: Pro
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     100002: Beard_1_Con
@@ -263,22 +261,23 @@ ModelImporter:
     7400000: anm_dwarfHero_walk
     9500000: //RootNode
     13700000: DwarfHero_Model
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: hero_armor
-    second: {fileID: 2100000, guid: 21b1a0bc9e95e2f4c825da52822bfec8, type: 2}
+    second: {fileID: 2100000, guid: 7729d36a6d74cbb4196902cfcefe6afe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: hero_body
-    second: {fileID: 2100000, guid: d0d9eeb71e4416e4abd61334cc893c61, type: 2}
+    second: {fileID: 2100000, guid: 609e1c3109d06a24f9d5631d517ed445, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: hero_hair
-    second: {fileID: 2100000, guid: 8c7ef3bb147760748a9f9c7f44990a22, type: 2}
+    second: {fileID: 2100000, guid: 73736f657fc7f404ebe9587f79b970f9, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -303,6 +302,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -362,6 +362,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

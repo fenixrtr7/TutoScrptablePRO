@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: f4d79ef96609c95428ea88ad2162473f
-timeCreated: 1502259383
-licenseType: Free
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     100002: Beard_1_Con
@@ -217,27 +215,28 @@ ModelImporter:
     9500000: //RootNode
     13700000: DwarfHero_Model
     13700002: Weapon:Sword_geo
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Weapon_material
-    second: {fileID: 2100000, guid: 8574ef34885c3d54c9451a9aaef7e13e, type: 2}
+    second: {fileID: 2100000, guid: 944bd8522149c0641a0445a41c93fecc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: hero_armor
-    second: {fileID: 2100000, guid: fd10c3fbcd9ad754095de4efaba59bc6, type: 2}
+    second: {fileID: 2100000, guid: 7729d36a6d74cbb4196902cfcefe6afe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: hero_body
-    second: {fileID: 2100000, guid: b884e2e5a3ce64048963417bf4a8a4bb, type: 2}
+    second: {fileID: 2100000, guid: 609e1c3109d06a24f9d5631d517ed445, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: hero_hair
-    second: {fileID: 2100000, guid: 432e7b7271129964b8a1832c4c1f1069, type: 2}
+    second: {fileID: 2100000, guid: 73736f657fc7f404ebe9587f79b970f9, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -261,6 +260,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0
     animationPositionError: 0
@@ -327,6 +327,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
